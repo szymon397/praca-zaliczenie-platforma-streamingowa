@@ -1,0 +1,2 @@
+# Szymon-Wisniewski-praca-zaliczeniowa
+ 

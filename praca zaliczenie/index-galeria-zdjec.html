@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Forza wideo" />
+  <meta name="keywords" content="forza horizon 4, cars, fast, cars, wideo game, tracks forza horizon" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>Galeria zdjęć HRIZON</title>
+  <link rel="icon" href="foto/logo-przewodnik-horizon.png" type="image/x-icon">
+</head>
+<body class="index-1">
+
+
+<nav class="menu">
+  <a href="index.html">
+    <img src="foto/logo-przewodnik-horizon.png" alt="Logo Przewodnik HORIZON" width="50px" height="40px">
+  </a>
+  <a href="index.html">Strona Główna</a>
+  <div class="dropdown">
+    <a href="#"> Wyścigi samochodowe </a>
+    <ul>
+      <li><a href="index-1-sprint.html"> Sprint </a> </li>
+      <li><a href="index-2-tor.html"> Tor </a> </li>
+      <li><a href="index-3-rownolegle.html"> Wyścigi równoległe </a> </li>
+    </ul>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Galeria Samochodów</a>
+  </div>
+
+  <a href="index-film-promocyjny.html"> Film Promujący HORIZON </a>
+  <a href="index-kontakt.html"> Pomoc techniczna </a>
+</nav>
+
+<div class="gallery-container">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-1.png" alt="Zdjęcie 1" onclick="showFullImage(0)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-2.png" alt="Zdjęcie 2" onclick="showFullImage(1)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-3.png" alt="Zdjęcie 3" onclick="showFullImage(2)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-4.png" alt="Zdjęcie 4" onclick="showFullImage(3)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-5.png" alt="Zdjęcie 5" onclick="showFullImage(4)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-6.png" alt="Zdjęcie 6" onclick="showFullImage(5)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-7.png" alt="Zdjęcie 7" onclick="showFullImage(6)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-8.png" alt="Zdjęcie 8" onclick="showFullImage(7)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-9.png" alt="Zdjęcie 9" onclick="showFullImage(8)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-10.png" alt="Zdjęcie 10" onclick="showFullImage(9)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-11.png" alt="Zdjęcie 11" onclick="showFullImage(10)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-12.png" alt="Zdjęcie 12" onclick="showFullImage(11)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-13.png" alt="Zdjęcie 13" onclick="showFullImage(12)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-14.png" alt="Zdjęcie 14" onclick="showFullImage(13)">
+  <img class="gallery-item rounded-image" src="foto-galeria/zdjecie-do-galerii-15.png" alt="Zdjęcie 15" onclick="showFullImage(14)">
+
+</div>
+
+<div class="full-image-overlay" onclick="hideFullImage()">
+  <img class="full-image" src="" alt="Full Image">
+</div>
+
+<div class="navigation-buttons hidden">
+  <button onclick="previousImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+</div>
+
+<script>
+  var images = document.querySelectorAll('.gallery-item');
+  var fullImageOverlay = document.querySelector('.full-image-overlay');
+  var fullImage = document.querySelector('.full-image');
+  var navigationButtons = document.querySelector('.navigation-buttons');
+  var currentIndex = 0;
+
+  function showFullImage(index) {
+    fullImage.src = images[index].src;
+    fullImageOverlay.classList.add('active');
+    navigationButtons.classList.remove('hidden');
+    currentIndex = index;
+  }
+
+  function hideFullImage() {
+    fullImageOverlay.classList.remove('active');
+    navigationButtons.classList.add('hidden');
+  }
+
+  function previousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    fullImage.src = images[currentIndex].src;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    fullImage.src = images[currentIndex].src;
+  }
+</script>
+</body>
+</html>
